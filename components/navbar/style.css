@@ -1,0 +1,107 @@
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* move navbar buttons to the right */
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  width: 100%;
+  background-color: #26324a; /* lighter modern blue */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid #60a5fa; /* lighter blue accent */
+  box-sizing: border-box;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(145deg, #3b4d6d, #26324a); /* lighter blue gradient */
+  color: #f3f8fa;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 14px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.value:hover {
+  background: #39507a;
+  box-shadow:
+    0 6px 12px rgba(96, 165, 250, 0.18),
+    inset 0 0 0 transparent;
+  transform: translateY(-2px);
+}
+
+.value:active {
+  transform: scale(0.97);
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.6) inset;
+}
+
+.value svg {
+  width: 24px;
+  height: 24px;
+  fill: #7d8590;
+  transition: fill 0.2s ease;
+}
+
+.value:hover svg {
+  fill: #2f81f7;
+}
+
+/* Ensure page content is not hidden behind navbar */
+body {
+  padding-top: 90px;
+}
+
+/* Add dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #26324a;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(96,165,250,0.10);
+  border-radius: 10px;
+  margin-top: 0; /* remove gap between button and dropdown */
+  z-index: 2000;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:focus-within .dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 22px;
+  color: #f3f8fa;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.dropdown-content a:hover {
+  background: #39507a;
+}
